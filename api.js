@@ -13,25 +13,22 @@ const Shedule2 = require("./Shedule2/index.js");
 const Shedule2A = require("./Shedule2A/index.js");
 const Shedule2P = require("./Shedule2P/index.js");
 const SheduleA = require("./SheduleA/index.js");
-const SheduleP = require("./SheduleP/index.js");
-const express = require("express"); */
-/* let app = express();
-let port = process.env.PORT || 3000;
+const SheduleP = require("./SheduleP/index.js");*/
+const express = require("express");
+let app = express();
+let port = 3003;
 
-app.get("/", function(request, response) {
-    response.send(Faculty(1));
+app.get("/", async (request, response) => {
+    const id = parseInt(request.query.id);
+    response.send(await Faculty(id));
 })
 
-app.post("/", (req, res) => {
-    console.log(res);
-})
+app.listen(port);
 
-app.listen(port); */
-
-let test = async (userInput) => {
+/* let test = async (userInput) => {
     let res = await Faculty(userInput);
     console.log("main res", res);
     return res;
 }
 
-test(27);//как заставить его ждать результата???
+test(27); */
