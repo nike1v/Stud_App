@@ -1,1 +1,0 @@
-# Devschacht React Native App
